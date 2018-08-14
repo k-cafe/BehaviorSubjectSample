@@ -16,14 +16,12 @@ export class TopComponent implements OnInit {
               private userService: UserService) { }
 
   ngOnInit() {
-    this.user = new User();
     this.userService.cast.subscribe(user => {
       this.user = user;
     });
   }
 
-  onClickToConfirm(event) {
-    event.preventDefault();
+  onClickToConfirm() {
     this.userService.broadcast(this.user);
     this.router.navigate(['confirm']);
   }
