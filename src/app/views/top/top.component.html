@@ -1,0 +1,20 @@
+    <form class="top-form" (submit)="onClickToConfirm($event)">
+        <mat-card class="card">
+          <table>
+            <tr>
+                <mat-form-field>
+                    <!-- Form Fieldにデータバインディングをする際は、name=""を設定しなければ動かない -->
+                    <input matInput placeholder="id" name="id" [(ngModel)]="user.id">
+                  </mat-form-field>
+            </tr>
+            <tr>
+                <mat-form-field>
+                    <input matInput placeholder="name" name="name" [(ngModel)]="user.name">
+                  </mat-form-field>
+            </tr>
+            <tr>
+                <button mat-button type="submit" mat-raised-button color="primary" >登録</button>
+            </tr>
+          </table>
+        </mat-card>
+      </form>
